@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase": "^9.19.1",
+    "mysql": "^2.18.1"
+  }
+}

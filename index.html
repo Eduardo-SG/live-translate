@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Translate</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://icons.iconarchive.com/icons/martz90/circle-addon2/512/google-translate-icon.png" type="image/x-icon" />
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="head-right">
+                <a href="index.html">Live Translate</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container wrapper">
+            <div class="translate-tab">
+                <button class="translate-button active-button">
+                    <span class="icon language-icon"><ion-icon name="language-outline"></ion-icon></span>
+                    <span class="button-text">
+                        <span class="translate-text">Translate Text</span>
+                        <span class="translate-language">58 language</span>
+                    </span>
+                </button>
+                <label for="upload-document" class="upload-document-button" id="history">
+                    <span class="icon language-icon">
+                        <ion-icon name="time-outline"></ion-icon>
+                    </span>
+                    <span class="button-text">
+                        <span id="upload-title">History</span>
+                    </span>
+                </label>
+            </div>
+            <div class="translation-box-wrapper">
+
+                <div class="translate">
+                    <div class="translation-input">
+                        <div class="from">
+                            <div class="dropdown-container" id="input-language">
+                                <div class="dropdown-toggle">
+                                    <ion-icon name="globe-outline"></ion-icon>
+                                    <span class="selected" data-value="auto">Auto Detect</span>
+                                    <ion-icon name="chevron-down-outline" class="down"></ion-icon>
+                                </div>
+                                <ul class="dropdown-menu">
+                                </ul>
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="text-area">
+                            <textarea name="input-text" id="input-text" cols="30" rows="10" placeholder="Enter your text here"></textarea>
+                            <div class="chars"><span class="input-chars">0</span><span> / 5000</span></div>
+                         </div>
+                         <div class="bottom-left-icon">
+                            <span class="bottom-icon mic-wrapper">
+                                <ion-icon class="mic" id="startSpeechRecognition" name="mic-outline"></ion-icon>
+                            </span>
+                            <span class="bottom-icon click"><ion-icon class="copy" id="from" name="copy-outline"></ion-icon>    
+                            </span>
+                            <span class="bottom-icon click"><ion-icon class="remove" name="close-outline"></ion-icon>   
+                            </span>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div class="swap">
+                            <ion-icon name="swap-horizontal-outline"></ion-icon>
+                        </div>
+                   </div>
+                    <div class="translation-output">
+                        
+                        <div class="to">
+                            <div class="dropdown-container" id="output-language">
+                                <div class="dropdown-toggle">
+                                    <ion-icon name="globe-outline"></ion-icon>
+                                    <span class="selected" data-value="en-US">English (EN)</span>
+                                    <ion-icon name="chevron-down-outline"  class="down"></ion-icon>
+                                </div>
+                                <ul class="dropdown-menu"></ul>
+
+                            </div>
+                           
+                        </div>
+                        <div class="text-area">
+                            <textarea name="output-text" id="output-text" cols="30" rows="10" placeholder="Translated text will appear here" readonly></textarea>
+                        </div>
+                        <div class="bottom-right-icon">
+                            <span class="bottom-icon click">
+                                <ion-icon class="volume" id="to" name="volume-medium-outline"></ion-icon>
+                            </span>
+                            <span class="bottom-icon click">
+                                <ion-icon class="copy" id="to" name="copy-outline"></ion-icon>   
+                            </span>
+                            <span class="bottom-icon click">
+                                <ion-icon onclick="shareText()" name="share-social-outline"></ion-icon>
+                            </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </main>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
